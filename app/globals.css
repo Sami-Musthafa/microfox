@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0ebe3;
+  box-sizing: border-box;
+}
+
+/* .slide-container {
+  overflow: hidden;
+  position: relative;
+  animation: animate 60s linear infinite;
+  white-space: wrap;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
