@@ -1,9 +1,12 @@
-import { Box, Container } from '@mui/material';
+import Homepage from '@/app/components/Homepage';
+import Homepage1 from '@/app/components/Homepage1';
+import { Container } from '@mui/material';
 
 export default function Home() {
   return (
-    <Container>
-      <Box>Hiii</Box>
-    </Container>
+    <>
+      <Homepage1 />
+      <Homepage />
+    </>
   );
 }
