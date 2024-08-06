@@ -71,7 +71,9 @@ const ComponentOne = () => {
               sx={{
                 width: 1,
                 bgcolor: 'black',
-                ':hover': { backgroundColor: '#FF8343', transition: '0.5s' },
+                color: '#f0ebe3',
+                fontSize: { xs: 12, md: 14 },
+                ':hover': { backgroundColor: '#FF8343' },
               }}
             >
               Book a Call
