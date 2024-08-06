@@ -34,7 +34,7 @@ const ComponentTwo = () => {
           src={amazonLogo}
           alt='amazonLogo'
           width={80}
-          height={20}
+          height={24}
           priority
           className={'slide'}
         />
