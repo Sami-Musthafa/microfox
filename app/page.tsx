@@ -1,6 +1,9 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+import { Box, Container } from '@mui/material';
 
 export default function Home() {
-  return <div>Hiii</div>;
+  return (
+    <Container>
+      <Box>Hiii</Box>
+    </Container>
+  );
 }
