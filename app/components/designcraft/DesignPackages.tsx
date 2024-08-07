@@ -1,23 +1,61 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './designPackages.css';
 import DesignCard from './DesignCard';
-import { Box, Container, Stack } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { FaArrowRight } from 'react-icons/fa6';
-import { motion, useAnimationControls } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BsTelephone } from 'react-icons/bs';
-import { Opacity } from '@mui/icons-material';
-import MotionDiv from './MotionDiv';
+
 import Image from 'next/image';
 import bubble1 from '../../../public/Bubbles/light-orange.svg';
+import bubble2 from '../../../public/Bubbles/bubble2.svg';
+import bubble3 from '../../../public/Bubbles/bubble3.svg';
 
 const DesignPackages = () => {
   const [selected, setSelected] = useState<'sprint' | 'monthly'>('sprint');
 
   return (
-    <div>
-      <MotionDiv />
+    <div style={{ position: 'relative' }}>
+      <motion.div
+        style={{
+          position: 'absolute',
+          top: '4%',
+          left: '0',
+        }}
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 2 }}
+        transition={{ duration: 1.2 }}
+      >
+        <Image src={bubble1} alt='bubble' width={200} height={200} />
+      </motion.div>
+      <motion.div
+        style={{
+          position: 'absolute',
+          top: '-10%',
+          left: '10%',
+          zIndex: -1,
+        }}
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 0.9 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Image src={bubble2} alt='bubble' width={200} height={200} />
+      </motion.div>
+      <motion.div
+        style={{
+          position: 'absolute',
+          bottom: '10%',
+          right: '10%',
+        }}
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 0.2 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Image src={bubble3} alt='bubble' width={200} height={200} />
+      </motion.div>
+
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

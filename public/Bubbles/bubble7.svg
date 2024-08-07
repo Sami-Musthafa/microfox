@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="190px" height="190px" viewBox="0 0 190 190" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Waimakariri" transform="translate(-1212, -197)" fill="#62BAFD" fill-rule="nonzero">
+            <g transform="translate(-413.8037, -379.1245)" id="Shape">
+                <path d="M1720.7792,738.001294 C1757.67881,740.247383 1784.41269,711.548014 1787.59185,671.378656 C1790.77101,631.209299 1757.67881,599.185896 1720.7792,604.756019 C1683.87958,610.326142 1656.72428,633.180357 1653.96654,671.378656 C1651.2088,709.576956 1683.87958,735.755205 1720.7792,738.001294 Z" transform="translate(1720.8037, 671.1245) rotate(39) translate(-1720.8037, -671.1245)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
