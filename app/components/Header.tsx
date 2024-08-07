@@ -62,11 +62,11 @@ const Header = () => {
               variant='contained'
               sx={{
                 width: { xs: 'max-content', md: 160 },
-                bgcolor: 'black',
+                bgcolor: '#FF8343',
                 fontSize: { xs: 12, md: 14 },
                 ':hover': {
-                  backgroundColor: '#FF8343',
                   transition: '0.5s',
+                  bgcolor: '#FF8343',
                 },
               }}
             >

@@ -1,3 +1,4 @@
+'use client';
 import {
   Box,
   Container,
@@ -6,7 +7,9 @@ import {
   CardContent,
   Button,
   Grid,
+  Stack,
 } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const Homepage1 = () => {
   const tags = [
@@ -59,8 +62,8 @@ const Homepage1 = () => {
 
   const titleColors = ['#FF0027', '#7EFF2A', '#3357FF', '#A300A3'];
   return (
-    <Box sx={{ bgcolor: '#f5f5f5' }}>
-      <Container>
+    <Container sx={{ py: 4 }}>
+      <Stack spacing={2}>
         <Box py={5} width={'72%'}>
           <Typography variant='h4'>
             Designs that increase signups, conversion and retention
@@ -74,52 +77,54 @@ const Homepage1 = () => {
         <Grid container spacing={4}>
           {projects.map((project, index) => (
             <Grid item xs={12} sm={6} md={6} key={index}>
-              <Card
-                sx={{
-                  display: 'flex',
-                  height: 320,
-                  backgroundImage: `url(${project.imgSrc})`,
-                  backgroundSize: 'cover',
-                }}
-              >
-                <Box
+              <motion.div initial={{ y: 100 }} whileInView={{ y: 0 }}>
+                <Card
                   sx={{
                     display: 'flex',
-                    flexDirection: 'column',
                     height: 320,
+                    backgroundImage: `url(${project.imgSrc})`,
+                    backgroundSize: 'cover',
                   }}
                 >
-                  <CardContent sx={{ flex: '1 0 auto' }}>
-                    <Typography
-                      variant='h5'
-                      sx={{
-                        mb: 2,
-                        color: titleColors[index % titleColors.length],
-                      }}
-                    >
-                      {project.title}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      color='textSecondary'
-                      sx={{ mb: 2, maxWidth: '240px' }}
-                    >
-                      {project.description}
-                    </Typography>
-                  </CardContent>
-                  <Box sx={{ p: 2 }} maxWidth={400}>
-                    {project.tags.map((tag, i) => (
-                      <Button
-                        size='small'
-                        key={i}
-                        sx={{ mb: 1, mr: 1, bgcolor: '#f5f5f5' }}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      height: 320,
+                    }}
+                  >
+                    <CardContent sx={{ flex: '1 0 auto' }}>
+                      <Typography
+                        variant='h5'
+                        sx={{
+                          mb: 2,
+                          color: titleColors[index % titleColors.length],
+                        }}
                       >
-                        {tag}
-                      </Button>
-                    ))}
+                        {project.title}
+                      </Typography>
+                      <Typography
+                        variant='body2'
+                        color='textSecondary'
+                        sx={{ mb: 2, maxWidth: '240px' }}
+                      >
+                        {project.description}
+                      </Typography>
+                    </CardContent>
+                    <Box sx={{ p: 2 }} maxWidth={400}>
+                      {project.tags.map((tag, i) => (
+                        <Button
+                          size='small'
+                          key={i}
+                          sx={{ mb: 1, mr: 1, bgcolor: '#f5f5f5' }}
+                        >
+                          {tag}
+                        </Button>
+                      ))}
+                    </Box>
                   </Box>
-                </Box>
-              </Card>
+                </Card>
+              </motion.div>
             </Grid>
           ))}
         </Grid>
@@ -131,26 +136,36 @@ const Homepage1 = () => {
           >
             Design, Development, Automation & More
           </Typography>
-          <Box>
+          <Stack
+            direction='row'
+            spacing={1}
+            rowGap={1}
+            flexWrap={'wrap'}
+            justifyContent='center'
+          >
             {tags.map((tag, index) => (
-              <Box
+              <motion.div
                 key={index}
-                sx={{
-                  display: 'inline-block',
-                  px: 2,
-                  py: 1,
-                  border: '1px solid black',
-                  borderRadius: 4,
-                  m: 1,
-                }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: index / 10 + 0.1 }}
               >
-                {tag}
-              </Box>
+                <Box
+                  sx={{
+                    px: 2,
+                    py: 1,
+                    border: '1px solid black',
+                    borderRadius: 4,
+                  }}
+                >
+                  {tag}
+                </Box>
+              </motion.div>
             ))}
-          </Box>
+          </Stack>
         </Box>
-      </Container>
-    </Box>
+      </Stack>
+    </Container>
   );
 };
 
