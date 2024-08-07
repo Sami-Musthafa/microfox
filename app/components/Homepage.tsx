@@ -55,7 +55,7 @@ const Homepage = () => {
   ];
   return (
     <Box sx={{ bgcolor: '#ffffff', py: 8 }}>
-      <Container>
+      <Container maxWidth='md'>
         <Box textAlign='center' mb={5}>
           <Typography variant='h3' component='h2' gutterBottom>
             Great design, without the overhead.

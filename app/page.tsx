@@ -3,6 +3,7 @@ import ComponentOne from './components/Component1';
 import ComponentTwo from './components/Component2';
 import Homepage1 from './components/Homepage1';
 import Homepage from './components/Homepage';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
