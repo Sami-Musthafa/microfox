@@ -11,43 +11,43 @@ const Design1 = () => {
           <motion.div
             className={styles.circle1}
             initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            whileInView={{ scale: 1 }}
             transition={{ duration: 2 }}
           ></motion.div>
           <motion.div
             className={styles.circle2}
             initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            whileInView={{ scale: 1 }}
             transition={{ duration: 2.2 }}
           ></motion.div>
           <motion.div
             className={styles.circle3}
             initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            whileInView={{ scale: 1 }}
             transition={{ duration: 2.4 }}
           ></motion.div>
           <motion.div
             className={styles.circle4}
             initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            whileInView={{ scale: 1 }}
             transition={{ duration: 2.6 }}
           ></motion.div>
           <motion.div
             className={styles.circle5}
             initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            whileInView={{ scale: 1 }}
             transition={{ duration: 2.8 }}
           ></motion.div>
           <motion.div
             className={styles.circle6}
             initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            whileInView={{ scale: 1 }}
             transition={{ duration: 3 }}
           ></motion.div>
           <motion.div
             className={styles.circle7}
             initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            whileInView={{ scale: 1 }}
             transition={{ duration: 3.2 }}
           ></motion.div>
         </div>
