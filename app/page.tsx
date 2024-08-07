@@ -1,19 +1,13 @@
-import { Container } from '@mui/material';
-import ComponentOne from './components/Component1';
-import ComponentTwo from './components/Component2';
-import Homepage1 from './components/Homepage1';
-import Homepage from './components/Homepage';
-import { motion } from 'framer-motion';
+import DesignPackages from './components/designcraft/DesignPackages';
+import ShowMoreCard from './components/designcraft/ShowMoreCard';
+import DesignFooter from './components/designcraft/DesignFooter';
 
 export default function Home() {
   return (
     <>
-      <Container maxWidth='md' sx={{ overflow: 'hidden' }}>
-        <ComponentOne />
-        <ComponentTwo />
-        <Homepage1 />
-      </Container>
-      <Homepage />
+      <DesignPackages />
+      <ShowMoreCard />
+      <DesignFooter />
     </>
   );
 }
