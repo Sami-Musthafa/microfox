@@ -2,7 +2,6 @@
 import React from 'react';
 import styles from '@/app/components/css/designStyles2.module.css';
 import { motion } from 'framer-motion';
-import Design3 from './Design3';
 
 type Props = {};
 
