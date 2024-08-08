@@ -117,22 +117,16 @@ div > ul {
   max-width: 200px;
   height: 50px;
   border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   color: #ffffff;
   background-color: black;
-  border-radius: 2px solid white;
+  position: relative;
 }
 
 .getStarted {
   height: 36px;
   width: 185px;
   border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   color: black;
   background-color: #f06aaf;
@@ -144,20 +138,16 @@ div > ul {
   height: 36px;
   width: 185px;
   border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   color: black;
   border: 5px solid #fff;
 }
 
-.getStarted:hover,
-.getStarted2:hover {
-  height: 42px;
-  width: 200px;
+/* .getStarted:hover, */
+/* .getStarted2:hover {
+  padding: 15px 2px;
   transition: 0.3s ease-in-out;
-}
+} */
 
 .scheduleCall {
   width: 200px;

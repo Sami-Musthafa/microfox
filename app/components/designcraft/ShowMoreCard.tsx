@@ -18,6 +18,8 @@ import bubble2 from '../../../public/Bubbles/bubble2.svg';
 import bubble6 from '../../../public/Bubbles/bubble6.svg';
 import bubble7 from '../../../public/Bubbles/bubble7.svg';
 import bubble8 from '../../../public/Bubbles/bubble8.svg';
+import cold from '../../../public/Bubbles/cold.svg';
+import hot from '../../../public/Bubbles/hot.svg';
 
 type Props = {};
 
@@ -42,6 +44,7 @@ const ShowMoreCard = (props: Props) => {
           position: 'absolute',
           top: '-15%',
           left: '6%',
+          zIndex: -1,
         }}
         initial={{ scale: 0 }}
         whileInView={{ scale: 0.4 }}
@@ -54,7 +57,7 @@ const ShowMoreCard = (props: Props) => {
           position: 'absolute',
           top: '-15%',
           left: '10%',
-          zIndex: -1,
+          zIndex: -2,
         }}
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
@@ -67,6 +70,7 @@ const ShowMoreCard = (props: Props) => {
           position: 'absolute',
           bottom: '40%',
           right: '-6%',
+          zIndex: -2,
         }}
         initial={{ scale: 0 }}
         whileInView={{ scale: 1.8 }}
@@ -80,7 +84,7 @@ const ShowMoreCard = (props: Props) => {
           position: 'absolute',
           top: '10%',
           right: '8%',
-          zIndex: -1,
+          // zIndex: -1,
         }}
         initial={{ scale: 0 }}
         whileInView={{ scale: 0.7 }}
@@ -169,9 +173,31 @@ const ShowMoreCard = (props: Props) => {
                   fontSize={70}
                   justifyContent={'center'}
                   alignItems={'center'}
-                  sx={{ fontWeight: 'bold', color: '#ffffff' }}
+                  sx={{
+                    fontWeight: 'bold',
+                    color: '#ffffff',
+                    position: 'relative',
+                  }}
                 >
-                  <Box>Turn cold outreach into hot outreach</Box>
+                  <Box>
+                    Turn co
+                    <span
+                      style={{ position: 'absolute', right: '21%', top: '18%' }}
+                    >
+                      <Image src={cold} alt='bubble' width={62} height={62} />
+                    </span>
+                    ld outreach into ho
+                    <span
+                      style={{
+                        position: 'absolute',
+                        right: '26%',
+                        bottom: '32%',
+                      }}
+                    >
+                      <Image src={hot} alt='bubble' width={72} height={72} />
+                    </span>
+                    t outreach
+                  </Box>
                 </Stack>
               </Stack>
             </CardContent>
