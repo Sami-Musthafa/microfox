@@ -57,10 +57,10 @@ const Design1 = () => {
             We design beautiful
             <br /> products, faster
           </h1>
-          <p className={styles.p}>
-            A premium design service that is accessible to all, <br />
-            without the premium price tag.
-          </p>
+          <div className={styles.p}>
+            A premium design service that is accessible to all, without the
+            premium price tag.
+          </div>
           <motion.button
             className={styles.button}
             whileHover={{ borderColor: 'transparent' }}

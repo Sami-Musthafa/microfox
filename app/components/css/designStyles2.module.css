@@ -3,7 +3,7 @@
   background-color: #fff2ed;
   color: #110202;
   text-align: center;
-  padding: 180px 20px;
+  padding: 180px 100px;
   overflow: hidden;
 }
 
@@ -53,6 +53,8 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
+  display: grid;
+  gap: 4px;
 }
 
 .heading {

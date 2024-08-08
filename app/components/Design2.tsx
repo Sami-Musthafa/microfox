@@ -32,53 +32,53 @@ const Design2 = (props: Props) => {
   ];
   return (
     <div className={styles.hero}>
-      <div className={styles.container}>
-        <div className={styles.circles}>
-          <motion.div
-            className={styles.circle1}
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 2 }}
-          ></motion.div>
-          <motion.div
-            className={styles.circle2}
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 2.2 }}
-          ></motion.div>
-          <motion.div
-            className={styles.circle3}
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 2.4 }}
-          ></motion.div>
-        </div>
-        <div className={styles.content}>
-          <motion.div initial={{ y: 100 }} whileInView={{ y: 0 }}>
-            <h1 className={styles.heading}>
-              From concept to reality in <br />
-              <span className={styles.headingSpan}>2 days </span>
-              or less
-            </h1>
-            <p className={styles.p}>
-              We will take your creative ideas and bring them to life faster
-              <br /> than you can slap a tick!
-            </p>
-          </motion.div>
-          <div className={styles.cards}>
-            {cards.map((card, index) => (
-              <div key={index} className={styles.card}>
-                <div className={styles.container}>
-                  <img className={styles.cardImg} src={card.imgSrc} />
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <p className={styles.cardDescription}>{card.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <Design3 />
+      {/* <div className={styles.container}> */}
+      <div className={styles.circles}>
+        <motion.div
+          className={styles.circle1}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 2 }}
+        ></motion.div>
+        <motion.div
+          className={styles.circle2}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 2.2 }}
+        ></motion.div>
+        <motion.div
+          className={styles.circle3}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 2.4 }}
+        ></motion.div>
       </div>
+      <div className={styles.content}>
+        <motion.div initial={{ y: 100 }} whileInView={{ y: 0 }}>
+          <h1 className={styles.heading}>
+            From concept to reality in <br />
+            <span className={styles.headingSpan}>2 days </span>
+            or less
+          </h1>
+          <p className={styles.p}>
+            We will take your creative ideas and bring them to life faster
+            <br /> than you can slap a tick!
+          </p>
+        </motion.div>
+        <div className={styles.cards}>
+          {cards.map((card, index) => (
+            <div key={index} className={styles.card}>
+              <div className={styles.container}>
+                <img className={styles.cardImg} src={card.imgSrc} />
+                <h3 className={styles.cardTitle}>{card.title}</h3>
+                <p className={styles.cardDescription}>{card.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <Design3 />
+      {/* </div> */}
     </div>
   );
 };
