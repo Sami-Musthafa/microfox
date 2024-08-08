@@ -1,7 +1,7 @@
 'use client';
 /* eslint-disable react/no-unescaped-entities */
-import { motion, useAnimationControls } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import React from 'react';
 
 type Props = {
   selected: 'sprint' | 'monthly';

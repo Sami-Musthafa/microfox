@@ -1,11 +1,8 @@
-'use client';
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa6';
 import Image from 'next/image';
-
 import cold from '../../../public/Bubbles/cold.svg';
 import hot from '../../../public/Bubbles/hot.svg';
 
