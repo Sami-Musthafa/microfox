@@ -1,13 +1,5 @@
-import DesignPackages from './components/designcraft/DesignPackages';
-import ShowMoreCard from './components/designcraft/ShowMoreCard';
-import DesignFooter from './components/designcraft/DesignFooter';
+import AllComponents from './components/designcraft/AllComponents';
 
 export default function Home() {
-  return (
-    <>
-      <DesignPackages />
-      <ShowMoreCard />
-      <DesignFooter />
-    </>
-  );
+  return <AllComponents />;
 }
