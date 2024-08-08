@@ -57,7 +57,7 @@ const Design1 = () => {
             We design beautiful
             <br /> products, faster
           </h1>
-          <div className={styles.p}>
+          <div className={styles.p1}>
             A premium design service that is accessible to all, without the
             premium price tag.
           </div>
