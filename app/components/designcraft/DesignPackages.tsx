@@ -12,7 +12,7 @@ const DesignPackages = () => {
   const [selected, setSelected] = useState<'sprint' | 'monthly'>('sprint');
 
   return (
-    <div className='center' style={{ width: '400px', flexDirection: 'column' }}>
+    <div className='center' style={{ width: '100%', flexDirection: 'column' }}>
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -34,12 +34,7 @@ const DesignPackages = () => {
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
           >
-            <Stack
-              spacing={2}
-              direction={{ xs: 'column', sm: 'row' }}
-              justifyContent='center'
-              alignItems='center'
-            >
+            <Stack width={1} justifyContent='center' alignItems='center'>
               <div className='sprintContainer'>
                 <div className='sprintButtons'>
                   <div className='buttonWrapper'>

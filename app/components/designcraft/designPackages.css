@@ -19,7 +19,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 }
 
 .designHeading {
@@ -191,4 +190,10 @@ div > ul {
   color: #ffffff;
   font-weight: 700;
   font-size: 16px;
+}
+
+.toolbar {
+  top: 'auto';
+  bottom: 0;
+  position: 'fixed';
 }

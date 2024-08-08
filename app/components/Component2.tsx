@@ -1,20 +1,22 @@
-import { Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 import Image from 'next/image';
-import samsung from '../../public/samsung.png';
-import amazonLogo from '../../public/amazon_logo.png';
-import fanaticsLogo from '../../public/fanatics_logo.png';
-import grouponLogo from '../../public/groupon_logo.png';
-import sharegridLogo from '../../public/sharegrid-logo.png';
+import slide1 from '../../public/slides/slide1.webp';
+import slide2 from '../../public/slides/slide2.webp';
+import slide3 from '../../public/slides/slide3.webp';
+import slide4 from '../../public/slides/slide4.jpg';
+import slide5 from '../../public/slides/slide5.webp';
+import '../styles/styles.css';
+import { FaCircleArrowRight } from 'react-icons/fa6';
 
 const ComponentTwo = () => {
   return (
     <Stack width={1} spacing={2} alignItems={'center'} py={2} my={2}>
-      <Typography fontSize={10} color={'#B4B4B8'}>
+      {/* <Typography fontSize={10} color={'#B4B4B8'}>
         We’ve done work for top brands
-      </Typography>
+      </Typography> */}
       <Stack
-        direction={{ xs: 'column', sm: 'row' }}
+        direction='row'
         justifyContent='space-evenly'
         alignItems='center'
         width={1}
@@ -23,45 +25,49 @@ const ComponentTwo = () => {
         pb={2}
       >
         <Image
-          src={samsung}
-          alt='samsung'
-          width={90}
-          height={15}
-          priority
-          className={'slide'}
-        />
-        <Image
-          src={amazonLogo}
+          src={slide2}
           alt='amazonLogo'
-          width={80}
-          height={24}
+          width={400}
+          height={400}
           priority
           className={'slide'}
         />
         <Image
-          src={sharegridLogo}
+          src={slide3}
           alt='sharegridLogo'
-          width={100}
-          height={15}
+          width={400}
+          height={400}
           priority
           className={'slide'}
         />
         <Image
-          src={fanaticsLogo}
+          src={slide4}
           alt='fanaticsLogo'
-          width={100}
-          height={20}
+          width={400}
+          height={400}
           priority
           className={'slide'}
         />
         <Image
-          src={grouponLogo}
-          alt='grouponLogo'
-          width={90}
-          height={15}
+          src={slide1}
+          alt='samsung'
+          width={400}
+          height={400}
           priority
           className={'slide'}
         />
+        <Image
+          src={slide5}
+          alt='grouponLogo'
+          width={400}
+          height={400}
+          priority
+          className={'slide'}
+        />
+      </Stack>
+      <Stack direction='row' spacing={1} alignItems='center'>
+        <Box sx={{ fontSize: 14, fontWeight: 500 }}>View recent work</Box>
+        <FaCircleArrowRight color='#62BAFD' size={25} />
       </Stack>
     </Stack>
   );
