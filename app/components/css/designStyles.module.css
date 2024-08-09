@@ -88,6 +88,7 @@
 
 .content {
   position: relative;
+  max-width: 800px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -118,7 +119,7 @@
   width: 240px;
   background-color: #ff6f91;
   color: #1a0e2a;
-  border: 6px solid #ffffff;
+  border: 6px solid #1a0e2a;
   border-radius: 36px;
   padding: 20px 40px;
   font-size: 18px;
@@ -126,10 +127,18 @@
   display: inline-block;
   position: relative;
   transition: background-color 0.3s;
+  box-shadow: 0 0 0 4px #ffffff;
 }
 
 .button:hover {
-  background-color: #ff5778;
+  background-color: #ff6f91;
+  box-shadow: 0 0 0 6px #1a0e2a;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
