@@ -53,17 +53,19 @@ const Design5 = (props: Props) => {
       <div className={styles.content}>
         <motion.div initial={{ y: 100 }} whileInView={{ y: 0 }}>
           <div className={styles.heading}>What is it we do? </div>
-        </motion.div>
-        <div className={styles.cards}>
-          {cards.map((card, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.container}>
-                <div className={styles.cardTitle}>{card.title}</div>
-                <div className={styles.cardDescription}>{card.description}</div>
+          <div className={styles.cards}>
+            {cards.map((card, index) => (
+              <div key={index} className={styles.card}>
+                <div className={styles.container}>
+                  <div className={styles.cardTitle}>{card.title}</div>
+                  <div className={styles.cardDescription}>
+                    {card.description}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );
