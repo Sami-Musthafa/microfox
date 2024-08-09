@@ -1,0 +1,39 @@
+.hover-effect {
+  transition: 0.2s ease-in-out;
+}
+
+.hover-effect:hover {
+  background-color: #2c1338;
+}
+
+.slide-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  border-radius: 20px;
+  animation: animate 90s linear infinite;
+  white-space: wrap;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-500%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .toolbar {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .mobileToolbar {
+    display: none !important;
+  }
+}

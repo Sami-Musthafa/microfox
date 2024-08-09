@@ -1,0 +1,8 @@
+@import 'variables';
+
+.designPackages {
+  @include variables.centerDiv;
+  height: 100vh;
+  width: 100vw;
+  color: variables.$color;
+}
