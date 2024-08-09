@@ -70,6 +70,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-top: 10px;
   width: 300px;
   padding: 20px 20px 20px 30px;
   background-color: #ffffff;
@@ -196,4 +197,18 @@ div > ul {
   top: 'auto';
   bottom: 0;
   position: 'fixed';
+}
+
+.cards {
+  gap: 20px;
+}
+
+@media screen and (max-width: 820px) {
+  .cards {
+    flex-direction: column;
+    gap: 0;
+  }
+  /* .designCard .designCard2 {
+    width: 100%;
+  } */
 }

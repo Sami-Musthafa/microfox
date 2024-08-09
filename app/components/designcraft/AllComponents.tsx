@@ -51,17 +51,10 @@ const AllComponents = () => {
   };
 
   return (
-    <div>
+    <>
       <ComponentTwo />
-      <Container maxWidth='lg'>
-        <div
-          className='center'
-          style={{
-            flexDirection: 'column',
-            position: 'relative',
-            width: '100%',
-          }}
-        >
+      <div>
+        <Container maxWidth='lg'>
           <div id='design-packages'>
             <DesignPackages />
           </div>
@@ -69,91 +62,31 @@ const AllComponents = () => {
             id='show-more-card'
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
             <ShowMoreCard />
           </motion.div>
-        </div>
-      </Container>
-
-      <div id='footer' style={{ backgroundColor: '#2C1338' }}>
-        <Container>
-          <DesignFooter />
         </Container>
-      </div>
 
-      <div
-        className='toolbar'
-        style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-      >
-        <motion.div
-          style={{
-            display: !showToolbar ? 'flex' : 'none',
-            top: 'auto',
-            bottom: 0,
-            position: 'fixed',
-            margin: '20px',
-            maxWidth: '600px',
-            height: '40px',
-            padding: '10px 20px',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: '#ffffff',
-            backgroundColor: '#08010C',
-            borderRadius: '30px',
-          }}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
-        >
-          <div className='hover-effect' style={styless}>
-            <FaArrowUp />
-          </div>
-          <div
-            className='hover-effect'
-            style={styless}
-            onClick={() => scrollToSection('design-packages')}
-          >
-            Design Packages
-          </div>
-          <div
-            className='hover-effect'
-            style={styless}
-            onClick={() => scrollToSection('show-more-card')}
-          >
-            Show More Card
-          </div>
-          <div
-            className='hover-effect'
-            style={styless}
-            onClick={() => scrollToSection('footer')}
-          >
-            Footer
-          </div>
-        </motion.div>
-      </div>
-      <div
-        className='mobileToolbar'
-        style={{
-          position: 'fixed',
-          bottom: 50,
-          right: 0,
-          borderRadius: '30px',
-        }}
-      >
-        {/* <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}> */}
-        <motion.div
-          style={{
-            display: isOpen ? 'flex' : 'none',
-            zIndex: 10,
-          }}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
+        <div id='footer' style={{ backgroundColor: '#2C1338' }}>
+          <Container>
+            <DesignFooter />
+          </Container>
+        </div>
+
+        <div
+          className='toolbar'
+          style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
         >
           <motion.div
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: '100%',
-              height: '200px',
+              display: !showToolbar ? 'flex' : 'none',
+              top: 'auto',
+              bottom: 0,
+              position: 'fixed',
+              margin: '20px',
+              maxWidth: '600px',
+              height: '40px',
               padding: '10px 20px',
               justifyContent: 'center',
               alignItems: 'center',
@@ -170,53 +103,116 @@ const AllComponents = () => {
             <div
               className='hover-effect'
               style={styless}
-              onClick={() => {
-                setIsOpen(!isOpen);
-                scrollToSection('design-packages');
-              }}
+              onClick={() => scrollToSection('design-packages')}
             >
               Design Packages
             </div>
             <div
               className='hover-effect'
               style={styless}
-              onClick={() => {
-                setIsOpen(!isOpen);
-                scrollToSection('show-more-card');
-              }}
+              onClick={() => scrollToSection('show-more-card')}
             >
-              Show More Card
+              About Us
             </div>
             <div
               className='hover-effect'
               style={styless}
-              onClick={() => {
-                setIsOpen(!isOpen);
-                scrollToSection('footer');
-              }}
+              onClick={() => scrollToSection('footer')}
             >
               Footer
             </div>
           </motion.div>
-        </motion.div>
-        <button
-          style={{
-            ...styless,
-            backgroundColor: '#08010C',
-            position: 'fixed',
-            bottom: 10,
-            right: 10,
-            zIndex: 10,
-          }}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          Menu
-        </button>
-        {/* </motion.nav> */}
+        </div>
+        <Bubbles />
       </div>
-      <Bubbles />
-    </div>
+    </>
   );
 };
 
 export default AllComponents;
+//<div>
+//<div
+//      className='mobileToolbar'
+//    style={{
+//    position: 'fixed',
+//  bottom: 50,
+//right: 0,
+//  borderRadius: '30px',
+//     }}
+//  >
+//   {/* <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}> */}
+// <motion.div
+// style={{
+//    display: isOpen ? 'flex' : 'none',
+//   zIndex: 10,
+// }}
+//initial={{ opacity: 0, y: 50 }}
+// animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
+// >
+// <motion.div
+// style={{
+// display: 'flex',
+// flexDirection: 'column',
+// width: '100%',
+// height: '200px',
+// padding: '10px 20px',
+// justifyContent: 'center',
+// alignItems: 'center',
+// color: '#ffffff',
+// backgroundColor: '#08010C',
+// borderRadius: '30px',
+// }}
+// initial={{ opacity: 0, y: 50 }}
+// whileInView={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
+// >
+// <div className='hover-effect' style={styless}>
+// <FaArrowUp />
+// </div>
+// <div
+// className='hover-effect'
+// style={styless}
+// onClick={() => {
+// setIsOpen(!isOpen);
+// scrollToSection('design-packages');
+// }}
+// >
+// Design Packages
+// </div>
+// <div
+// className='hover-effect'
+// style={styless}
+// onClick={() => {
+// setIsOpen(!isOpen);
+// scrollToSection('show-more-card');
+// }}
+// >
+// Show More Card
+// </div>
+// <div
+// className='hover-effect'
+// style={styless}
+// onClick={() => {
+// setIsOpen(!isOpen);
+// scrollToSection('footer');
+// }}
+// >
+// Footer
+// </div>
+// </motion.div>
+// </motion.div>
+// <button
+// style={{
+// ...styless,
+// backgroundColor: '#08010C',
+// position: 'fixed',
+// bottom: 10,
+// right: 10,
+// zIndex: 10,
+// }}
+// onClick={() => setIsOpen(!isOpen)}
+// >
+// Menu
+// </button>
+// {/* </motion.nav> */}
+// </div>
+// </div>
