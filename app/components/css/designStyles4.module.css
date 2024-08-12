@@ -1,0 +1,100 @@
+.hero {
+  position: relative;
+  background-color: #fff2ed;
+  color: #110202;
+  text-align: center;
+  padding: 50px 0px 20px 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.content {
+  max-width: 800px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 28px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeading {
+  padding: 10px 0px;
+}
+
+.imgcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 26px 0;
+}
+
+.img1 {
+  width: 14%;
+  height: 14%;
+}
+
+.img2 {
+  width: 6%;
+}
+.img3 {
+  width: 14%;
+  height: 14%;
+}
+.img4 {
+  width: 14%;
+  height: 14%;
+}
+.img5 {
+  width: 14%;
+  height: 14%;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cardHeading {
+    max-width: 20ch;
+    text-align: center;
+  }
+  .imgcontainer {
+    display: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 26px 0;
+  }
+  .cardHeading {
+    padding: 32px 0;
+  }
+  .img1 {
+    width: 50%;
+  }
+  .img2 {
+    width: 25%;
+  }
+  .img3 {
+    width: 50%;
+  }
+  .img4 {
+    width: 30%;
+  }
+  .img5 {
+    width: 50%;
+  }
+}

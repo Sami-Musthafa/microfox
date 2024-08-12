@@ -12,12 +12,19 @@ import { FaArrowRight } from 'react-icons/fa6';
 import Image from 'next/image';
 import cold from '../../../public/Bubbles/cold.svg';
 import hot from '../../../public/Bubbles/hot.svg';
+import bubble2 from '../../../public/Bubbles/bubble2.svg';
+import bubble4 from '../../../public/Bubbles/bubble4.svg';
+import bubble5 from '../../../public/Bubbles/bubble5.svg';
+import bubble6 from '../../../public/Bubbles/bubble6.svg';
+import bubble7 from '../../../public/Bubbles/bubble7.svg';
+import bubble8 from '../../../public/Bubbles/bubble8.svg';
+import { motion } from 'framer-motion';
 
 const ShowMoreCard = () => {
   return (
-    <div>
+    <div style={{ position: 'relative' }}>
       <Stack alignItems={'center'} sx={{ my: 5 }}>
-        <Box sx={{ width: { xs: '100%', sm: '90%', md: '80%', lg: '70%' } }}>
+        <Stack sx={{ width: { xs: '100%', sm: '90%', md: '80%', lg: '70%' } }}>
           <Card sx={{ bgcolor: '#016aff', borderRadius: 5 }}>
             <CardContent>
               <Stack direction={{ xs: 'column', sm: 'row' }}>
@@ -120,8 +127,88 @@ const ShowMoreCard = () => {
               </Stack>
             </CardContent>
           </Card>
-        </Box>
+        </Stack>
       </Stack>
+      <div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            bottom: '0',
+            left: '-10%',
+            zIndex: -1,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1.7 }}
+          transition={{ duration: 0.9 }}
+        >
+          <Image src={bubble4} alt='bubble' width={200} height={200} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '-5%',
+            zIndex: -1,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 0.4 }}
+          transition={{ duration: 1 }}
+        >
+          <Image src={bubble5} alt='bubble' width={200} height={200} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            top: '-10%',
+            left: '0',
+            zIndex: -2,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image src={bubble2} alt='bubble' width={200} height={200} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            bottom: '30%',
+            right: '5%',
+            zIndex: -1,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1.8 }}
+          transition={{ duration: 1.2 }}
+        >
+          <Image src={bubble6} alt='bubble' width={200} height={200} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            top: '-10%',
+            right: '-5%',
+            zIndex: -1,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 0.7 }}
+          transition={{ duration: 1.5 }}
+        >
+          <Image src={bubble7} alt='bubble' width={200} height={200} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            bottom: '10%',
+            right: '3%',
+            zIndex: -1,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 0.2 }}
+          transition={{ duration: 1.8 }}
+        >
+          <Image src={bubble8} alt='bubble' width={200} height={200} />
+        </motion.div>
+      </div>
     </div>
   );
 };

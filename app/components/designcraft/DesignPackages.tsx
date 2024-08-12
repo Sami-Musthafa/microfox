@@ -7,12 +7,19 @@ import { Box, Stack } from '@mui/material';
 import { FaArrowRight } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 import { BsTelephone } from 'react-icons/bs';
+import bubble1 from '../../../public/Bubbles/light-orange.svg';
+import bubble2 from '../../../public/Bubbles/bubble2.svg';
+import bubble3 from '../../../public/Bubbles/bubble3.svg';
+import Image from 'next/image';
 
 const DesignPackages = () => {
   const [selected, setSelected] = useState<'sprint' | 'monthly'>('sprint');
 
   return (
-    <div className='center' style={{ width: '100%', flexDirection: 'column' }}>
+    <div
+      className='center'
+      style={{ width: '100%', flexDirection: 'column', position: 'relative' }}
+    >
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -114,6 +121,47 @@ const DesignPackages = () => {
               </div>
             </Box>
           </Stack>
+        </motion.div>
+      </div>
+      <div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            top: '4%',
+            left: '0',
+            zIndex: -1,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 2 }}
+          transition={{ duration: 1.2 }}
+        >
+          <Image src={bubble1} alt='bubble' width={200} height={200} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            top: '-10%',
+            left: '10%',
+            zIndex: -1,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 0.9 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image src={bubble2} alt='bubble' width={200} height={200} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: 'absolute',
+            bottom: '25%',
+            right: '3%',
+            zIndex: -1,
+          }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 0.3 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image src={bubble3} alt='bubble' width={200} height={200} />
         </motion.div>
       </div>
     </div>
