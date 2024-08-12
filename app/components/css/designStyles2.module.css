@@ -95,20 +95,22 @@
 
 .cardImg {
   display: flex;
-  width: 32%;
+  width: 20%;
   padding: 30px 0 20px 40px;
   align-self: flex-start;
 }
 
 .cardTitle {
   text-align: left;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 600;
   padding-left: 40px;
   padding-bottom: 8px;
 }
 
 .cardDescription {
   text-align: left;
+  opacity: 0.8;
   line-height: 1.6;
   padding: 0 16px 40px 40px;
 }
@@ -138,7 +140,7 @@
   }
 
   .cardImg {
-    width: 24%;
+    width: 14%;
   }
 
   .cardDescription {
