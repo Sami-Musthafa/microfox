@@ -9,25 +9,25 @@ const Design5 = (props: Props) => {
   const cards = [
     {
       title: 'Design consultant',
-      color: 'blue',
+      color: '#132edf',
       description:
         'Advise on design strategies to improve functionality and market appeal by conducting product audits to identify areas for improvement, enhancing user engagement and brand perception.',
     },
     {
       title: 'Web design',
-      color: 'red',
+      color: '#ebb1b1',
       description:
         'Website layouts (one-page/multi-page) with custom graphics and strategic content placement. Delivered as fully responsive and visually striking websites, utilizing Webflow.',
     },
     {
       title: 'Branding',
-      color: 'black',
+      color: '#d98a14',
       description:
         'Logo creation, comprehensive style guides, corporate identity, strategic brand messaging, and immersive environmental branding.',
     },
     {
       title: 'Product design',
-      color: 'yellow',
+      color: '#80d8ff',
       description:
         'User interface design, interaction design, design refinement, prototyping, wireframing, product audit.',
     },
