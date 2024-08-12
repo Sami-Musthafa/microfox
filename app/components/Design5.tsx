@@ -9,21 +9,25 @@ const Design5 = (props: Props) => {
   const cards = [
     {
       title: 'Design consultant',
+      color: 'blue',
       description:
         'Advise on design strategies to improve functionality and market appeal by conducting product audits to identify areas for improvement, enhancing user engagement and brand perception.',
     },
     {
       title: 'Web design',
+      color: 'red',
       description:
         'Website layouts (one-page/multi-page) with custom graphics and strategic content placement. Delivered as fully responsive and visually striking websites, utilizing Webflow.',
     },
     {
       title: 'Branding',
+      color: 'black',
       description:
         'Logo creation, comprehensive style guides, corporate identity, strategic brand messaging, and immersive environmental branding.',
     },
     {
       title: 'Product design',
+      color: 'yellow',
       description:
         'User interface design, interaction design, design refinement, prototyping, wireframing, product audit.',
     },
@@ -50,23 +54,29 @@ const Design5 = (props: Props) => {
           transition={{ duration: 2.4 }}
         ></motion.div>
       </div>
-      <div className={styles.content}>
-        <motion.div initial={{ y: 100 }} whileInView={{ y: 0 }}>
-          <div className={styles.heading}>What is it we do? </div>
-          <div className={styles.cards}>
-            {cards.map((card, index) => (
-              <div key={index} className={styles.card}>
-                <div className={styles.container}>
-                  <div className={styles.cardTitle}>{card.title}</div>
-                  <div className={styles.cardDescription}>
-                    {card.description}
-                  </div>
-                </div>
+      <motion.div
+        initial={{ y: 100 }}
+        className={styles.content}
+        whileInView={{ y: 0 }}
+      >
+        <div className={styles.heading}>What is it we do? </div>
+        <div className={styles.cards}>
+          {cards.map((card, index) => (
+            <div key={index} className={styles.card}>
+              <div>
+                <div
+                  style={{ backgroundColor: card.color }}
+                  className={styles.circle8}
+                ></div>
               </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
+              <div className={styles.container}>
+                <div className={styles.cardTitle}>{card.title}</div>
+                <div className={styles.cardDescription}>{card.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 };
