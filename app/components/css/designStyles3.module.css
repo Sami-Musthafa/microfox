@@ -90,8 +90,6 @@
   .card {
     border-radius: 28px;
     width: 100%;
-    /* width: 80%; */
-    /* padding-bottom: 20px; */
   }
 
   .cardRow {
@@ -110,8 +108,6 @@
 
   .heading {
     font-size: 32px;
-    /* text-align: left; */
-    /* padding: 0 20px; */
   }
 
   .container {
@@ -125,14 +121,10 @@
   }
 
   .p1 {
-    /* line-height: 0.6;
-    padding-bottom: 0px; */
     font-size: 16px;
   }
 
   .p2 {
-    /* max-width: 20ch;
-    text-align: left; */
     font-size: 14px;
   }
 }

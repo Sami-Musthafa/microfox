@@ -24,6 +24,8 @@
   background-color: #ffffff;
   border-radius: 28px;
   width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cardHeading {
@@ -60,8 +62,7 @@
 }
 @media (max-width: 768px) {
   .card {
-    width: 80%;
-    margin: 0 30px;
+    width: 90%;
     display: flex;
     align-items: center;
     flex-direction: column;
