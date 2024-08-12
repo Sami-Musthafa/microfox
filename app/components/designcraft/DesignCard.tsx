@@ -50,16 +50,18 @@ const DesignCard = (props: Props) => {
             <li>Extended plan available</li>
           </ul>
         </div>
-        <div className='getStartedWrapper center'>
-          <motion.div
-            whileHover={{ scaleX: 1.04, scaleY: 1.13 }}
-            className='getStarted center'
-          ></motion.div>
-          <div
-            className='center'
-            style={{ position: 'absolute', color: 'black' }}
-          >
-            Get started
+        <div className='center' style={{ width: '100%' }}>
+          <div className='getStartedWrapper center'>
+            <motion.div
+              whileHover={{ scaleX: 1.04, scaleY: 1.13 }}
+              className='getStarted center'
+            ></motion.div>
+            <div
+              className='center'
+              style={{ position: 'absolute', color: 'black' }}
+            >
+              Get started
+            </div>
           </div>
         </div>
       </motion.div>
@@ -102,16 +104,18 @@ const DesignCard = (props: Props) => {
               <li>Upgrade available</li>
             </ul>
           </div>
-          <div className='getStartedWrapper center'>
-            <motion.div
-              whileHover={{ scaleX: 1.04, scaleY: 1.13 }}
-              className='getStarted2 center'
-            ></motion.div>
-            <div
-              className='center'
-              style={{ position: 'absolute', color: 'black' }}
-            >
-              Reserve your spot
+          <div className='center' style={{ width: '100%' }}>
+            <div className='getStartedWrapper center'>
+              <motion.div
+                whileHover={{ scaleX: 1.04, scaleY: 1.13 }}
+                className='getStarted2 center'
+              ></motion.div>
+              <div
+                className='center'
+                style={{ position: 'absolute', color: 'black' }}
+              >
+                Reserve your spot
+              </div>
             </div>
           </div>
         </div>

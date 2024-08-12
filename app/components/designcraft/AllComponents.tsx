@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import DesignFooter from './DesignFooter';
 import ShowMoreCard from './ShowMoreCard';
 import DesignPackages from './DesignPackages';
@@ -14,22 +14,50 @@ import ComponentTwo from '../Component2';
 const AllComponents = () => {
   const [showToolbar, setShowToolbar] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY) {
-      setShowToolbar(true);
-    } else {
-      setShowToolbar(false);
-    }
-    setLastScrollY(currentScrollY);
-  }, [lastScrollY]);
+  const [activeSection, setActiveSection] = useState('');
+  const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    //create new instance and pass a callback function
+    observer.current = new IntersectionObserver((entries) => {
+      const visibleSection = entries.find(
+        (entry) => entry.isIntersecting
+      )?.target;
+      //Update state with the visible section ID
+      if (visibleSection) {
+        setActiveSection(visibleSection.id);
+      }
+    });
+
+    //Get custom attribute data-section from all sections
+    const sections = document.querySelectorAll('[data-section]');
+
+    sections.forEach((section) => {
+      if (observer.current) {
+        observer.current.observe(section);
+      }
+    });
+    //Cleanup function to remove observer
+    return () => {
+      sections.forEach((section) => {
+        observer.current?.unobserve(section);
+      });
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setShowToolbar(true);
+      } else {
+        setShowToolbar(false);
+      }
+      setLastScrollY(currentScrollY);
+    };
     window.addEventListener('scroll', handleScroll);
-  }, [lastScrollY, handleScroll]);
+    return window.addEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -55,20 +83,21 @@ const AllComponents = () => {
       <ComponentTwo />
       <div>
         <Container maxWidth='lg'>
-          <div id='design-packages'>
+          <div data-section id='design-packages'>
             <DesignPackages />
           </div>
           <motion.div
+            data-section
             id='show-more-card'
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
             <ShowMoreCard />
           </motion.div>
         </Container>
 
-        <div id='footer' style={{ backgroundColor: '#2C1338' }}>
+        <div data-section id='footer' style={{ backgroundColor: '#2C1338' }}>
           <Container>
             <DesignFooter />
           </Container>
@@ -102,21 +131,35 @@ const AllComponents = () => {
             </div>
             <div
               className='hover-effect'
-              style={styless}
+              style={{
+                ...styless,
+                backgroundColor:
+                  activeSection === 'design-packages' ? '#ffffff' : '',
+                color: activeSection === 'design-packages' ? 'black' : '',
+              }}
               onClick={() => scrollToSection('design-packages')}
             >
               Design Packages
             </div>
             <div
               className='hover-effect'
-              style={styless}
+              style={{
+                ...styless,
+                backgroundColor:
+                  activeSection === 'show-more-card' ? '#ffffff' : '',
+                color: activeSection === 'show-more-card' ? 'black' : '',
+              }}
               onClick={() => scrollToSection('show-more-card')}
             >
               About Us
             </div>
             <div
               className='hover-effect'
-              style={styless}
+              style={{
+                ...styless,
+                backgroundColor: activeSection === 'footer' ? '#ffffff' : '',
+                color: activeSection === 'footer' ? 'black' : '',
+              }}
               onClick={() => scrollToSection('footer')}
             >
               Footer
