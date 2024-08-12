@@ -14,6 +14,17 @@
   }
 } */
 
+@font-face {
+  font-family: 'Inter-W';
+  src: url('/public/fonts/Inter_24pt-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* * {
+  font-family: 'Inter-W', sans-serif;
+} */
+
 body {
   margin: 0;
   padding: 0;
