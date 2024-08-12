@@ -3,10 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import DesignFooter from './DesignFooter';
 import ShowMoreCard from './ShowMoreCard';
 import DesignPackages from './DesignPackages';
-import { Container } from '@mui/material';
+import { Box, Container, Fade, Menu, MenuItem, Stack } from '@mui/material';
 
 import { motion } from 'framer-motion';
-import Bubbles from './Bubbles';
 import '../../styles/styles.css';
 import { FaArrowUp } from 'react-icons/fa';
 import ComponentTwo from '../Component2';
@@ -15,26 +14,26 @@ import Design4 from '../Design4';
 import Design3 from '../Design3';
 import Design2 from '../Design2';
 import Design5 from '../Design5';
+import { IoMenu } from 'react-icons/io5';
 
 const AllComponents = () => {
   const [showToolbar, setShowToolbar] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('');
   const observer = useRef<IntersectionObserver | null>(null);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    //create new instance and pass a callback function
     observer.current = new IntersectionObserver((entries) => {
       const visibleSection = entries.find(
         (entry) => entry.isIntersecting
       )?.target;
-      //Update state with the visible section ID
+
       if (visibleSection) {
         setActiveSection(visibleSection.id);
       }
     });
 
-    //Get custom attribute data-section from all sections
     const sections = document.querySelectorAll('[data-section]');
 
     sections.forEach((section) => {
@@ -42,7 +41,7 @@ const AllComponents = () => {
         observer.current.observe(section);
       }
     });
-    //Cleanup function to remove observer
+
     return () => {
       sections.forEach((section) => {
         observer.current?.unobserve(section);
@@ -199,96 +198,86 @@ const AllComponents = () => {
             </div>
           </motion.div>
         </div>
-        <Bubbles />
+      </div>
+      <div
+        style={{
+          display: !showToolbar ? 'block' : 'none',
+        }}
+      >
+        <Box
+          sx={{
+            display: { xs: 'flex', sm: 'none' },
+            position: 'fixed',
+            bottom: 35,
+            right: 30,
+            top: 'auto',
+            bgcolor: 'black',
+            padding: 2,
+            borderRadius: '50%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            cursor: 'pointer',
+          }}
+          onClick={() => setOpen(true)}
+        >
+          <IoMenu size={30} color='white' style={{ alignSelf: 'center' }} />
+        </Box>
+      </div>
+
+      <div
+        style={{
+          display: open ? 'flex' : 'none',
+          zIndex: 9999,
+          width: '100vw',
+          height: '100vh',
+          position: 'fixed',
+          top: 0,
+          backgroundColor: '#08010C',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          gap: '20px',
+        }}
+      >
+        <div
+          style={{ ...styless }}
+          onClick={() => {
+            setOpen(false);
+            scrollToSection('design1');
+          }}
+        >
+          Home
+        </div>
+        <div
+          style={{ ...styless }}
+          onClick={() => {
+            setOpen(false);
+            scrollToSection('design-packages');
+          }}
+        >
+          Design Packages
+        </div>
+        <div
+          style={{ ...styless }}
+          onClick={() => {
+            setOpen(false);
+            scrollToSection('show-more-card');
+          }}
+        >
+          About Us
+        </div>
+        <div
+          style={{ ...styless }}
+          onClick={() => {
+            setOpen(false);
+            scrollToSection('footer');
+          }}
+        >
+          Footer
+        </div>
       </div>
     </div>
   );
 };
 
 export default AllComponents;
-//<div>
-//<div
-//      className='mobileToolbar'
-//    style={{
-//    position: 'fixed',
-//  bottom: 50,
-//right: 0,
-//  borderRadius: '30px',
-//     }}
-//  >
-//   {/* <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}> */}
-// <motion.div
-// style={{
-//    display: isOpen ? 'flex' : 'none',
-//   zIndex: 10,
-// }}
-//initial={{ opacity: 0, y: 50 }}
-// animate={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
-// >
-// <motion.div
-// style={{
-// display: 'flex',
-// flexDirection: 'column',
-// width: '100%',
-// height: '200px',
-// padding: '10px 20px',
-// justifyContent: 'center',
-// alignItems: 'center',
-// color: '#ffffff',
-// backgroundColor: '#08010C',
-// borderRadius: '30px',
-// }}
-// initial={{ opacity: 0, y: 50 }}
-// whileInView={{ opacity: 1, y: 0, transition: { duration: 0.3 } }}
-// >
-// <div className='hover-effect' style={styless}>
-// <FaArrowUp />
-// </div>
-// <div
-// className='hover-effect'
-// style={styless}
-// onClick={() => {
-// setIsOpen(!isOpen);
-// scrollToSection('design-packages');
-// }}
-// >
-// Design Packages
-// </div>
-// <div
-// className='hover-effect'
-// style={styless}
-// onClick={() => {
-// setIsOpen(!isOpen);
-// scrollToSection('show-more-card');
-// }}
-// >
-// Show More Card
-// </div>
-// <div
-// className='hover-effect'
-// style={styless}
-// onClick={() => {
-// setIsOpen(!isOpen);
-// scrollToSection('footer');
-// }}
-// >
-// Footer
-// </div>
-// </motion.div>
-// </motion.div>
-// <button
-// style={{
-// ...styless,
-// backgroundColor: '#08010C',
-// position: 'fixed',
-// bottom: 10,
-// right: 10,
-// zIndex: 10,
-// }}
-// onClick={() => setIsOpen(!isOpen)}
-// >
-// Menu
-// </button>
-// {/* </motion.nav> */}
-// </div>
-// </div>
